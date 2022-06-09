@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .sticker {
+            width: 200px;
+            height: 200px;
+            background-image: url(stickers.png);
+            background-size: cover;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            float: left;
+            transition: 0.5s;
+        }
+        .sticker:hover{
+            margin-top: -20px;
+            transition: 0.5s;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            background-image: url(https://img5.goodfon.ru/wallpaper/nbig/5/e3/osen-listia-fon-derevo-colorful-wood-background-autumn-le-32.jpg);
+            background-size: cover;
+            padding-top: 460px;
+            overflow: hidden;
+            
+
+        }
+
+        .add {
+            position: fixed;
+            width: 130px;
+            height: 45px;
+            border-radius: 15px;
+        color: #fff;
+        background-color: burlywood;
+            border: none;
+            top: 30px;
+            font-family: monospace;
+            right: 41%;
+            transition: 0.5s;
+            font-size: 18px;
+        }
+        .add:hover{
+            font-size: 20px;
+            transition: 0.5s;
+        }
+        .inp{
+            position: fixed;
+            width: 200px;
+            height: 45px;
+            border-radius: 15px;
+        color: #fff;
+        background-color: burlywood;
+            border: none;
+            padding:10px ;
+            top: 30px;
+            right: 50%;
+        }
+        .group{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 90px;
+            
+            position: fixed;
+            font-family: monospace;
+            top: 30px;
+            right: 43%;top: 100px;
+         
+        }
+        .text{
+            width: 100%;
+            height: 50%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600; color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .left{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+           
+            
+        }
+        .right{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 600;
+            margin-left: 20px;
+           
+        }
+        .btns{
+            width: 100%;
+            height: 50%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+        .left1{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            font-size: 20px;
+            font-weight: 600;
+           
+            
+        }
+        .right1{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+           
+        }
+        .left__btn{
+            width: 35px;
+            height: 35px;
+            margin-top: -10px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+        }
+        .right__btn{
+            width: 35px;
+            height: 35px;
+            margin-top: -10px;
+            border-radius: 50%;
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+        .block{
+            width: 90%;
+            height: 90%;
+            background-color: red;
+            border-radius: 50%;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrap" id="wrap">
+        <input type="text" placeholder="Ведіть свою роботу" class="inp" id="input">
+        <button id="add" class="add">add</button>
+        <div class="group">
+            <div class="text">
+                Дуже важливе
+               
+            </div>
+            <div class="btns">
+               
+                    <div class="left__btn" id="imp">
+                        <div class="block" id="block"></div>
+                    </div>
+                
+               
+                 
+              
+            </div>
+            
+        </div>
+    </div>
+
+
+    <script>
+       let a = 'prepend'
+      let b = false;
+
+           
+                $('#add').click(function() {
+                    if(b!=true){
+                    let task = $('#input').val()
+           
+           if(input.value === ''){
+               alert('Ведіьб щось')
+           }
+           else{
+               $('#wrap').append('<div class="sticker"><p class = "p2">' + task + '</p></div>');
+           console.log(a)
+           $('#input').val('')
+           }
+        }
+        else if(b===true){
+
+ let task = $('#input').val()
+           
+           if(input.value === ''){
+               alert('Ведіьб щось')
+           }
+           else{
+               
+               $('#wrap').prepend('<div class="sticker"><p class = "p2">' + task + '</p></div>');
+           console.log(a)
+           $('#input').val('')
+           }
+        }
+
+
+$('.sticker').click(function() {
+     $(this).hide(300);
+})
+imp.onclick = function(){
+    if(b!=true){
+        b=true
+        block.style.display = 'flex'
+        console.log(b)
+    }
+    else if(b===true){
+        b=false
+        block.style.display = 'none'
+        console.log(b)
+    }
+
+}
+                })
+            
+               
+       
+    </script>
+</body></html>
